@@ -22,12 +22,19 @@ Due Date : April 23 2025
 
 
 // Global Arrays
-
 int arrival_times[NUM_PROCESSES];
-int durations[NUM_PROCESSES];
-int priorities[NUM_PROCESSES];
-int process_id[NUM_PROCESSES];
+int durations[NUM_PROCESSES] = {100, 20, 80, 20, 140, 220, 360, 120, 170, 110};
+int priorities[NUM_PROCESSES] = {1, 10, 3, 5, 7, 2, 8, 4, 9, 6};
+int process_id[NUM_PROCESSES] = {5, 11, 238, 254, 330, 637, 1042, 1163, 1364, 1404};
 
+
+
+typedef struct{
+	int pid;
+	int duration; 
+	int priority;
+	int arrival_time;
+}Process;
 
 
 int main(void){
