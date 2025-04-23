@@ -9,11 +9,13 @@ Due Date : April 23 2025
 
 
 
+//Libraries and imports
+#include <stdlib.h>	  // for general utilities such as EXIT_SUCCESS 
+#include <stdio.h> 	  // for printf 
+#include <pthread.h>  // for POSIX threading support
+#include <stdbool.h>  // for using bool, true false
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <pthread.h>
-#include <unistd.h>
+
 
 
 
@@ -35,6 +37,13 @@ typedef struct{
 	int priority;
 	int arrival_time;
 }Process;
+
+
+
+// First Come First Serve
+Process FCFS_QUEUE[NUM_PROCESSES];
+
+
 
 
 int main(void){
