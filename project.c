@@ -28,22 +28,20 @@ int arrival_times[NUM_PROCESSES];
 int durations[NUM_PROCESSES] = {100, 20, 80, 20, 140, 220, 360, 120, 170, 110};
 int priorities[NUM_PROCESSES] = {1, 10, 3, 5, 7, 2, 8, 4, 9, 6};
 int process_id[NUM_PROCESSES] = {5, 11, 238, 254, 330, 637, 1042, 1163, 1364, 1404};
+int total_duration[4] = {0}; // One for each scheduling algorithm (4in this case)
+
+
+// typedef struct{
+// 	int pid;
+// 	int duration; 
+// 	int priority;
+// 	int arrival_time;
+// }Process;
 
 
 
-typedef struct{
-	int pid;
-	int duration; 
-	int priority;
-	int arrival_time;
-}Process;
-
-
-
-// First Come First Serve
-Process FCFS_QUEUE[NUM_PROCESSES];
-
-
+// // First Come First Serve
+// Process FCFS_QUEUE[NUM_PROCESSES];
 
 
 int main(void){
@@ -63,12 +61,7 @@ int main(void){
 	printf("\n\t- Shortest Job First\n\t- Priority Queue\n\t- Round Robin\n");
 
 
-    int farenheit = 0, count = 0;
-    while (farenheit <= 300){
-        farenheit += 10;
-        count++;
-    }
-    printf("\nNum times the loop ran:%d\n ", count);
+   
 
 
     printf("\nProgrammed by Sam Arshad\n 4-23-2025\n");
