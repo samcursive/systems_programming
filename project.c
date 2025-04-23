@@ -33,8 +33,6 @@ int process_id[NUM_PROCESSES] = {5, 11, 238, 254, 330, 637, 1042, 1163, 1364, 14
 int total_duration[4] = {0}; // One for each scheduling algorithm (4in this case)
 
 
-
-
 //Mutex for synchronization
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
@@ -73,8 +71,17 @@ void *round_robin_scheduling(void *arg);
 //**													   **//
 //***********************************************************//
 
+int proc_id[NUM_PROCESSES], dur[NUM_PROCESSES], priority[NUM_PROCESSES];
 
+void initialize_data(){
+	for (int i = 0; i < NUM_PROCESSES; i++){
+		proc_id[i] = process_id[i];
+		dur[i] = durations[i];
+		priority[i] = priorities[i]; 
 
+		printf("Process ID = %d, \tDuration = %d, \tPriority = %d\n", proc_id[i], dur[i], priority[i]);
+	}
+}
 
 
 
@@ -103,6 +110,10 @@ int main(void){
 	printf("This program will simulate the CPU scheduling Algorithms in the following order:\n\n");
 	printf("\n\t- First Come, First Served");
 	printf("\n\t- Shortest Job First\n\t- Priority Queue\n\t- Round Robin\n");
+
+
+	initialize_data();
+
 
 
    
