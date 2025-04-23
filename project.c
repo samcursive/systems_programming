@@ -38,14 +38,49 @@ int total_duration[4] = {0}; // One for each scheduling algorithm (4in this case
 //Mutex for synchronization
 pthread_mutex_t mutex = PTHREAD_MUTEX_INITIALIZER;
 pthread_cond_t cond = PTHREAD_COND_INITIALIZER;
+int current_thread = 0;
 
 
-// typedef struct{
-// 	int pid;
-// 	int duration; 
-// 	int priority;
-// 	int arrival_time;
-// }Process;
+
+//Function Prototypes
+
+//******************First Come First Served******************//
+//**													   **//
+void *fcfs_scheduling(void *arg);
+//**													   **//
+//***********************************************************//
+
+
+//******************Shortest Job First***********************//
+//**													   **//
+void *sjf_scheduling(void *arg);
+//**													   **//
+//***********************************************************//
+
+
+
+//*****************Priority Scheduling***********************//
+//**													   **//
+void *priority_scheduling(void *arg);
+//**													   **//
+//***********************************************************//
+
+
+
+//******************Round Robin Scheduling*******************//
+//**													   **//
+void *round_robin_scheduling(void *arg);
+//**													   **//
+//***********************************************************//
+
+
+
+
+
+
+
+
+
 
 
 
